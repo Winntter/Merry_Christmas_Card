@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #18807e;
+    --bluecards: rgb(5, 193, 194);
+    --font-color: #ce2b4e;
+    --green-tree-font: #045c2b;
+}
+
+body {
+    font-family: "Dancing Script";
+    overflow: hidden;
+    margin: 0;
+    background-image: url(img/background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cardboard-box { 
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.cardboard {
+    position: absolute;
+    width: 450px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: var(--green-tree-font);
+    transition: .4s ease-in-out;
+    opacity: 80%;
+}
+
+form {
+    padding: 15px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+
+form > p {
+    color: greenyellow;
+    font-size: 55px;
+    padding-bottom: 15px;
+    padding-top: 1rem;
+}
+
+form > img {
+    position: relative;
+    border-radius: 50%;
+    align-self: center;
+    justify-content: center;
+    width: 16rem;
+}
+
+footer {
+    background-color: red;
+
+}
+
+
+/*================= Santa Gift's Input ==============*/
+
+.santa-gift-text {
+    display: flex;
+    justify-content: center;
+    width: 16rem;
+    font-size: 1.1rem;
+    color: var(--font-color);
+    padding: 3px 3px 3px 3px;
+    box-shadow: .5px .5px;
+    border-radius: .8em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*================= Send Santa Button ==============*/
+
+.buttonsanta {
+    display: flex;
+    justify-content: center;
+    background: var(--background-color);
+    border-radius: 30px;
+    padding: 3px 3px 3px 3px;
+    font-size: 1.2rem;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+p {
+    color: purple;
+    font-size: 25px;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+/*================= Hover Animation ==============*/
+
+.buttonsanta:hover {
+    content: '';
+    width: 60%;
+    height: 35px;
+    transition: 4s;
+    animation: btnON 3s infinite ease-in-out;
+}
+
+.cardboard:hover {
+    opacity: 100%;
+    width: 650px;
+    height: 600px;
+    animation: cardEffect 5s infinite;
+}   
+
+.cardboard form input[type="submit"] {
+    cursor: pointer;
+    width: 40%;
+    height: 60%;
+}
+
+/*================= Keyframes ==============*/
+
+@keyframes btnON {       /*Button Keyframe*/
+    50% {
+        background: var(--green-tree-font);
+    }
+    80% {
+        background: #8934b8;
+    }
+    100% {
+        background: var(--background-color);
+    }
+}
+
+@keyframes cardEffect {
+    0% {
+        background: #045c2b
+    }
+    10% {
+        background: #057336;
+    }
+    20% {
+        background:#02381a
+    }
+    30% {
+        background: #054925;
+    }
+    40% {
+       background: #0a582d;
+    }
+    50% {
+        background: #084c26;
+    }
+    60% {
+        background: #298452;
+    }
+    80% {
+        background: #074322;
+    }
+    100% {
+        background: #045c2b;
+    }
+}
+
+@keyframes snowAnim {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(250px);
+    }
+}
+
+/*================= Keyframes ==============*/
+
+.snow,.snow:after,.snow:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+        radial-gradient(4px 4px at 221px 202px, #fff, transparent),
+        radial-gradient(3px 3px at 135px 202px, #fff, transparent),
+        radial-gradient(5px 5px at 168px 6px, #fff, transparent),
+        radial-gradient(6px 6px at 221px 202px, #fff, transparent),
+        radial-gradient(3px 3px at 200px 150px, #fff, transparent),
+        radial-gradient(5px 5px at 135px 158px, #fff, transparent),
+        radial-gradient(6px 6px at 168px 6px, #fff, transparent),
+        radial-gradient(5px 5px at 504px 313px, #fff, transparent),
+        radial-gradient(6px 6px at 84px 354px, #fff, transparent),
+        radial-gradient(3px 3px at 537px 201px, #fff, transparent),
+        radial-gradient(5px 5px at 273px 268px, #fff, transparent),
+        radial-gradient(6px 6px at 510px 454px, #fff, transparent),
+        radial-gradient(4px 4px at 438px 535px, #fff, transparent),
+        radial-gradient(5px 5px at 491px 310px, #fff, transparent),
+        radial-gradient(3px 3px at 105px 52px, #fff, transparent),
+        radial-gradient(4px 4px at 28px 392px, #fff, transparent),
+        radial-gradient(6px 6px at 351px 427px, #fff, transparent),
+        radial-gradient(3px 3px at 184px 260px, #fff, transparent),
+        radial-gradient(4px 4px at 99px 72px, #fff, transparent),
+        radial-gradient(5px 5px at 180px 41px, #fff, transparent);
+        background-size: 700px 700px;
+        animation: snowAnim 2s linear infinite;
+}
+
+.snow::after {
+    margin-left: -350px;
+    opacity: .5;
+    filter: blur(3px);
+    animation-direction: reverse;
+    animation-duration: 6s;
+}
+
+.snow:before {
+    margin-left: -250px;
+    opacity: .7;
+    animation-duration: 9s;
+    filter: blur(2px);
+}
